@@ -26,20 +26,13 @@ void ABomb::Explode() {
 	Super::ActivateItem(nullptr);
 	if (ExplosionParticle)
 	{
-	
-		if (UParticleSystemComponent* Particle = UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ExplosionParticle, GetActorLocation(), GetActorRotation(), false))
-		{
-			GetWorld()->GetTimerManager().SetTimer(
-				DestroyParticleTimerHandle, 
-				[Particle]()
-				{
-					if (Particle && Particle->IsActive())
-						Particle->DestroyComponent();
-				},
-				2.0f, 
-				false
-			);
-		}
+		UGameplayStatics::SpawnEmitterAtLocation(
+			GetWorld(), 
+			ExplosionParticle, 
+			GetActorLocation(), 
+			GetActorRotation(), 
+			true
+		);
 	}
 	if (ExplosionSound)
 	{
