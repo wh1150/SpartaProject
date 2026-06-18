@@ -16,6 +16,8 @@ ASpartaCharacter::ASpartaCharacter()
 	SpringArmComp->TargetArmLength = 300.f;
 	SpringArmComp->bUsePawnControlRotation = true;
 	
+	
+	
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	CameraComp->SetupAttachment(SpringArmComp, USpringArmComponent::SocketName);
 	CameraComp->bUsePawnControlRotation = false;
