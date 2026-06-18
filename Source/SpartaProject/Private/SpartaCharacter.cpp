@@ -33,6 +33,7 @@ ASpartaCharacter::ASpartaCharacter()
 	GetCharacterMovement()->MaxWalkSpeed = NormalSpeed;
 	MaxHealth = 100.0f;
 	Health = MaxHealth;
+	
 }
 
 void ASpartaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
